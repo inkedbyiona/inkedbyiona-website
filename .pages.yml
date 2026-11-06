@@ -5,9 +5,62 @@ media:
 
 content:
   - name: website
-    label: Website files
+    label: Website content
     type: file
-    path: index.html
-    format: code
-    options:
-      language: html
+    path: content/site.json
+    format: json
+    fields:
+      - name: home
+        label: Home page
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: intro
+            type: text
+
+      - name: about
+        label: About me
+        type: object
+        fields:
+          - name: heading
+            type: string
+          - name: name
+            type: string
+          - name: paragraph1
+            type: text
+          - name: paragraph2
+            type: text
+
+      - name: portfolio
+        label: Portfolio
+        type: object
+        list: true
+        fields:
+          - name: image
+            type: image
+          - name: caption
+            type: string
+
+      - name: services
+        label: Services
+        type: object
+        list: true
+        fields:
+          - name: title
+            type: string
+          - name: description
+            type: text
+
+      - name: contact
+        label: Contact details
+        type: object
+        fields:
+          - name: location
+            type: string
+          - name: email
+            type: string
+          - name: instagram
+            type: string
+          - name: instagramUrl
+            type: string
