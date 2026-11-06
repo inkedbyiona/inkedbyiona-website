@@ -3,12 +3,14 @@
     "eyebrow": "Independent tattoo artist · Berwick-upon-Tweed",
     "intro": "From small meaningful pieces to large & bold custom designs, Inked By Iona is all about creating tattoos that feel like you."
   },
-  "about": {
-    "heading": "Hey, I'm Iona!",
-    "name": "The founder of Inked By Iona",
-    "paragraph1": "I'm the founder of Inked By Iona, a self-taught tattoo artist based in Berwick-upon-Tweed.\nI love bringing people's ideas to life, whether that's something small and meaningful, a bold statement piece or a design that's completely unique to you.",
-    "paragraph2": "While I've mainly focused on black and grey tattooing so far, I'm always happy exploring new styles, techniques and creative ideas as I develop my own artistic specialty.\nI love a bit of variety, so I'm always excited to hear what you've got in mind and work together to create something you'll love!"
-  },
+
+"about": {
+  "heading": "Hey, I'm Iona!",
+  "name": "The founder of Inked By Iona",
+  "paragraph1": "I'm the founder of Inked By Iona, a self-taught tattoo artist based in Berwick-upon-Tweed.\nI love bringing people's ideas to life, whether that's something small and meaningful, a bold statement piece or a design that's completely unique to you.",
+  "paragraph2": "While I've mainly focused on black and grey tattooing so far, I'm always happy exploring new styles, techniques and creative ideas as I develop my own artistic specialty.\nI love a bit of variety, so I'm always excited to hear what you've got in mind and work together to create something you'll love!"
+},
+
   "portfolio": [
     {
       "image": "images/image0[1].jpeg",
