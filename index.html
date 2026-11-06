@@ -1,301 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Inked By Iona — independent tattoo artist in Berwick-upon-Tweed. Custom tattoos, flash designs and black and grey work.">
-  <meta name="theme-color" content="#171816">
-  <title>Inked By Iona | Tattoo Artist · Berwick-upon-Tweed</title>
-  <style>
-    :root {
-      --ink: #171816; --panel: #20221f; --paper: #eeeae2;
-      --muted: #b8b5ac; --sage: #929b83; --line: #45483f;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Arial, Helvetica, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--sans); line-height: 1.65; }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1120px, calc(100% - 44px)); margin: auto; }
-    header { position: sticky; top: 0; z-index: 10; background: rgba(23,24,22,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { font-family: var(--serif); letter-spacing: .15em; font-size: 19px; white-space: nowrap; }
-    .brand span { color: var(--sage); }
-    nav { display: flex; gap: 25px; flex-wrap: wrap; justify-content: flex-end; }
-    nav a, .eyebrow { font-size: 10px; letter-spacing: .19em; text-transform: uppercase; color: var(--muted); }
-    nav a:hover, a:hover { color: var(--sage); }
-    .hero { min-height: 660px; display: grid; align-items: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
-    .hero:before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 40%, rgba(146,155,131,.17), transparent 42%), linear-gradient(115deg, transparent 45%, rgba(255,255,255,.025)); pointer-events: none; }
-    .hero-inner { position: relative; padding: 100px 0 110px; max-width: 760px; }
-    h1 { font: normal clamp(48px, 8vw, 94px)/.98 var(--serif); letter-spacing: .045em; margin: 20px 0 25px; }
-    h1 span { color: var(--sage); display: block; }
-    .intro { color: var(--muted); font-size: 17px; max-width: 540px; margin-bottom: 34px; }
-    .actions { display: flex; gap: 13px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 13px 21px; border: 1px solid var(--sage); color: var(--paper); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; transition: .2s; }
-    .btn.primary { background: var(--sage); color: #171816; }
-    .btn:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-    section { padding: 94px 0; border-bottom: 1px solid var(--line); }
-    .section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 35px; align-items: start; margin-bottom: 42px; }
-    h2 { font: normal clamp(34px, 5vw, 54px)/1.05 var(--serif); margin: 10px 0; }
-    .section-copy { color: var(--muted); max-width: 590px; margin: 8px 0 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
-    .art-panel { min-height: 360px; border: 1px solid var(--line); background: linear-gradient(145deg, #292c27, #191a18 70%); display: grid; place-items: center; padding: 35px; text-align: center; }
-    .art-panel .monogram { font: normal 110px/.9 var(--serif); color: var(--sage); opacity: .85; }
-    .art-panel small { display: block; color: var(--muted); letter-spacing: .22em; font-size: 9px; margin-top: 18px; text-transform: uppercase; }
-    .about-text p, .service p, .contact p { color: var(--muted); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { background: var(--panel); border: 1px solid var(--line); padding: 28px; min-height: 190px; }
-    .card .num { color: var(--sage); font: 26px var(--serif); }
-    h3 { font: normal 25px var(--serif); margin: 12px 0 8px; }
-    .portfolio-note { border: 1px dashed var(--line); padding: 30px; text-align: center; color: var(--muted); }
-    .portfolio-note strong { color: var(--paper); font-family: var(--serif); font-size: 23px; font-weight: normal; display: block; margin-bottom: 8px; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; }
-    .contact-list { border-top: 1px solid var(--line); margin-top: 25px; }
-    .contact-row { padding: 15px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; }
-    .contact-row span:first-child { color: var(--muted); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
-    .contact-row span:last-child { text-align: right; }
-    .notice { background: var(--panel); border-left: 2px solid var(--sage); padding: 22px; color: var(--muted); font-size: 14px; }
-    footer { padding: 28px 0; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
-    footer .foot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    @media (max-width: 720px) {
-      .nav { padding: 16px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
-      nav { justify-content: flex-start; gap: 14px 20px; }
-      .hero { min-height: 570px; }
-      .hero-inner { padding: 85px 0; }
-      .section-head, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 18px; }
-      section { padding: 70px 0; }
-      .cards { grid-template-columns: 1fr; }
-      .art-panel { min-height: 260px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Inked By Iona — self-taught tattoo artist in Berwick-upon-Tweed. Custom tattoos and flash designs. Enquire via Venue Ink.">
+<meta name="theme-color" content="#171816">
+<link rel="icon" type="image/jpeg" href="/images/logo%20square.jpg">
+<title>Inked By Iona | Tattoo Artist · Berwick-upon-Tweed</title>
+<style>
+:root{--ink:#171816;--panel:#20221f;--paper:#eeeae2;--muted:#b8b5ac;--sage:#929b83;--line:#45483f;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.65}a{color:inherit;text-decoration:none}a:hover{color:var(--sage)}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(23,24,22,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:var(--serif);letter-spacing:.15em;font-size:19px;white-space:nowrap}.brand span{color:var(--sage)}nav{display:flex;gap:25px;flex-wrap:wrap;justify-content:flex-end}nav a,.eyebrow{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
+.hero{min-height:660px;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 40%,rgba(146,155,131,.17),transparent 42%),linear-gradient(115deg,transparent 45%,rgba(255,255,255,.025));pointer-events:none}.hero-inner{position:relative;padding:90px 0 100px;max-width:820px}.hero-logo{margin:20px 0 12px}.hero-logo img{display:block;width:100%;max-width:800px;height:auto}.hero-tagline{font:normal clamp(25px,4vw,40px)/1.2 var(--serif);margin:0 0 14px}.intro{color:var(--muted);font-size:17px;max-width:620px;margin:0 0 34px}.actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-block;padding:13px 21px;border:1px solid var(--sage);color:var(--paper);font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:.2s}.btn.primary{background:var(--sage);color:var(--ink)}.btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+section{padding:94px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:1fr 2fr;gap:35px;align-items:start;margin-bottom:42px}h2{font:normal clamp(34px,5vw,54px)/1.05 var(--serif);margin:10px 0}.section-copy{color:var(--muted);max-width:590px;margin:8px 0 0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.art-panel{min-height:360px;border:1px solid var(--line);background:linear-gradient(145deg,#292c27,#191a18 70%);display:grid;place-items:center;padding:35px;text-align:center}.art-panel .monogram{font:normal 110px/.9 var(--serif);color:var(--sage);opacity:.85}.art-panel small{display:block;color:var(--muted);letter-spacing:.22em;font-size:9px;margin-top:18px;text-transform:uppercase}.about-text p,.contact p,.card p,.pricing p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:28px;min-height:190px}.card .num{color:var(--sage);font:26px var(--serif)}h3{font:normal 25px var(--serif);margin:12px 0 8px}.pricing{margin-top:22px;padding:26px;border:1px solid var(--line)}.smallprint{font-size:12px;color:var(--muted)}
+.portfolio-note{border:1px dashed var(--line);padding:30px;text-align:center;color:var(--muted)}.tattoo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.tattoo-gallery figure{margin:0;background:var(--panel);border:1px solid var(--line)}.tattoo-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.tattoo-gallery img.rotate-180{transform:rotate(180deg)}.tattoo-gallery figcaption{padding:12px;color:var(--muted)}.tattoo-gallery figcaption:empty{display:none}
+.studio-panel{padding:44px;border:1px solid var(--line);background:linear-gradient(135deg,#292c27,#20221f)}.studio-panel p{color:var(--muted);max-width:650px}.policies{display:grid;gap:12px}.policies details{border:1px solid var(--line);background:var(--panel);padding:0 22px}.policies summary{cursor:pointer;padding:18px 0;font:normal 22px var(--serif);list-style-position:inside}.policies details p,.policies details li{color:var(--muted)}.policies details p:first-of-type{margin-top:0}.policy-note{font-size:12px;color:var(--muted);margin-top:20px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}.contact-list{border-top:1px solid var(--line);margin-top:25px}.contact-row{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}.contact-row span:first-child{color:var(--muted);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.contact-row span:last-child{text-align:right;overflow-wrap:anywhere}.notice{background:var(--panel);border-left:2px solid var(--sage);padding:22px;color:var(--muted);font-size:14px}.social-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;font-size:13px;text-decoration:underline;text-underline-offset:4px}footer{padding:35px 0;color:var(--muted);font-size:11px;letter-spacing:.08em;text-align:center}.footer-logo{display:block;width:110px;height:auto;margin:0 auto 18px}.foot{display:flex;justify-content:center;gap:12px 25px;flex-wrap:wrap}.foot a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:720px){.nav{padding:16px 0;align-items:flex-start;flex-direction:column;gap:12px}nav{justify-content:flex-start;gap:14px 20px}.hero{min-height:480px}.hero-inner{padding:65px 0}.section-head,.about-grid,.contact-grid{grid-template-columns:1fr;gap:18px}section{padding:70px 0}.cards{grid-template-columns:1fr}.art-panel{min-height:260px}.studio-panel{padding:26px}.hero-tagline{font-size:27px}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home">INKED <span>BY IONA</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#work">My work</a><a href="#services">What I do</a><a href="#booking">Enquiries</a>
-    </nav>
-  </div>
-</header>
-
+<header><div class="wrap nav"><a class="brand" href="#home">INKED <span>BY IONA</span></a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">My work</a><a href="#services">What I do</a><a href="#studio">Studio</a><a href="#booking">Enquiries</a></nav></div></header>
 <main>
-  <section class="hero" id="home">
-    <div class="wrap hero-inner">
-      <div class="eyebrow">Independent tattoo artist · Berwick-upon-Tweed</div>
-      <h1>INKED <span>BY IONA</span></h1>
-      <p class="intro">Thoughtful, individual tattoos — from considered custom pieces to little designs that mean a lot. Specialising in black and grey tattooing.</p>
-      <div class="actions">
-        <a class="btn primary" href="#work">Explore my work</a>
-        <a class="btn" href="#booking">Make an enquiry</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">A little introduction</div><h2>Meet your artist.</h2></div>
-        <p class="section-copy">A personal approach, a calm studio experience and artwork created with you in mind.</p>
-      </div>
-      <div class="about-grid">
-        <div class="art-panel"><div><div class="monogram">IBI</div><small>Inked By Iona · Berwick</small></div></div>
-        <div class="about-text">
-          <h3>Hi, I'm Iona.</h3>
-          <p>I'm an independent tattoo artist based in Berwick-upon-Tweed. I love creating tattoos that feel personal to the person wearing them, whether that's a custom idea or a favourite flash design.</p>
-          <p>My work focuses primarily on black and grey, with an interest in bold designs, illustrative detail and pieces with a little character.</p>
-          <p><em>This introduction is a first draft — we can make it sound much more like you.</em></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">Selected work</div><h2>The portfolio.</h2></div>
-        <p class="section-copy">A growing collection of finished tattoos, custom designs and available flash.</p>
-      </div>
-      <div class="portfolio-note">
-        <strong>Your tattoos belong here.</strong>
-        Add your favourite healed and freshly completed pieces here. We'll organise them into a clean gallery as you choose the photographs.
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">The details</div><h2>What I do.</h2></div>
-        <p class="section-copy">Every tattoo starts with a conversation. Tell me what you're imagining and we'll work out the best approach together.</p>
-      </div>
-      <div class="cards">
-        <article class="card"><div class="num">01</div><h3>Custom tattoos</h3><p>One-off designs developed around your ideas, placement and personal style.</p></article>
-        <article class="card"><div class="num">02</div><h3>Flash designs</h3><p>Choose from available designs, or keep an eye out for new flash releases.</p></article>
-        <article class="card"><div class="num">03</div><h3>Black & grey</h3><p>Monochrome tattoo work, from delicate details to stronger, bolder designs.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <div class="wrap contact-grid">
-      <div class="contact">
-        <div class="eyebrow">Start a conversation</div>
-        <h2>Have an idea?</h2>
-        <p>For a tattoo enquiry, send over your idea, approximate size, placement and any reference images via Instagram or email. I'll get back to you as soon as I can.</p>
-        <div class="actions"><a class="btn primary" href="https://www.instagram.com/inkedbyiona" target="_blank" rel="noopener">Follow @inkedbyiona</a><a class="btn" href="mailto:iona@inkedbyiona.co.uk">Email Iona</a></div>
-      </div>
-      <div>
-        <div class="notice">To help me understand your idea, include:<br><br>— A description or reference image<br>— Where you'd like the tattoo<br>— Approximate size in centimetres<br>— Whether you're thinking custom or flash<br>— Your availability</div>
-        <div class="contact-list">
-          <div class="contact-row"><span>Studio</span><span>Berwick-upon-Tweed</span></div>
-          <div class="contact-row"><span>Artist</span><span>Inked By Iona</span></div>
-          <div class="contact-row"><span>Email</span><span>iona@inkedbyiona.co.uk</span></div>
-          <div class="contact-row"><span>Instagram</span><span>@inkedbyiona</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="hero" id="home"><div class="wrap hero-inner"><div class="eyebrow">Independent tattoo artist · Berwick-upon-Tweed</div><h1 class="hero-logo"><img src="/images/Banner%20Logo.jpg" alt="Inked By Iona" width="800" height="300"></h1><h2 class="hero-tagline">Your ideas, brought to life in ink.</h2><p class="intro">From small meaningful pieces to large &amp; bold custom designs, Inked By Iona is all about creating tattoos that feel like you.</p><div class="actions"><a class="btn primary" href="#work">Explore my work</a><a class="btn" href="https://venue.ink/@inkedbyiona" target="_blank" rel="noopener noreferrer">Make an enquiry</a></div></div></section>
+<section id="about"><div class="wrap"><div class="section-head"><div><div class="eyebrow">A little introduction</div><h2>Hey, I'm Iona!</h2></div></div><div class="about-grid"><div class="art-panel"><div><div class="monogram">IBI</div><small>Inked By Iona · Berwick</small></div></div><div class="about-text"><p>I'm the founder of Inked By Iona, a self-taught tattoo artist based in Berwick-upon-Tweed.</p><p>I love bringing people's ideas to life, whether that's something small and meaningful, a bold statement piece or a design that's completely unique to you.</p><p>While I've mainly focused on black and grey tattooing so far, I'm always happy exploring new styles, techniques and creative ideas as I develop my own artistic specialty.</p><p>I love a bit of variety, so I'm always excited to hear what you've got in mind and work together to create something you'll love!</p></div></div></div></section>
+<section id="work"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Selected work</div><h2>The portfolio.</h2></div><p class="section-copy">A growing collection of finished tattoos, custom designs and available flash.</p></div><div class="portfolio-note">Your tattoo photos will appear here.</div></div></section>
+<section id="services"><div class="wrap"><div class="section-head"><div><div class="eyebrow">The details</div><h2>What I do.</h2></div><p class="section-copy">Every tattoo starts with a conversation. Tell me what you're imagining and we'll work out the best approach together.</p></div><div class="cards"><article class="card"><div class="num">01</div><h3>Custom Tattoos</h3><p>Personalised designs developed together around your ideas, inspiration pictures, placement and individual style.</p></article><article class="card"><div class="num">02</div><h3>Flash Designs</h3><p>Choose from my available flash designs, offered at set prices and sizes. Keep an eye on my socials for new releases, or browse available designs on Venue Ink!</p></article></div><div class="pricing"><h3>Pricing</h3><p>Custom tattoos are priced individually depending on size, placement and detail. Flash tattoos are available at set prices.</p><p>For a personalised quote, <a href="https://venue.ink/@inkedbyiona" target="_blank" rel="noopener noreferrer"><u>submit your idea through Venue Ink</u></a>.</p><div class="smallprint">Minimum tattoo charge: £40.</div></div></div></section>
+<section id="studio"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Behind the scenes</div><h2>The Studio.</h2></div></div><div class="studio-panel"><h3>Something exciting is coming...</h3><p>A little space of my own is coming together in Berwick-upon-Tweed! Keep an eye out for studio updates, behind-the-scenes progress and the official reveal.</p><p>Follow along on Instagram and Facebook for updates. 🖤</p></div></div></section>
+<section id="policies"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Before you book</div><h2>The Important Bits.</h2></div><p class="section-copy">A few useful things to know before your appointment. Click any heading to read more.</p></div><div class="policies">
+<details><summary>Bookings &amp; deposits</summary><p>Enquiries can be submitted through Venue Ink. For smaller tattoo appointments, the booking payment is £12: a £10 tattoo deposit deducted from your final tattoo price, plus a separate £2 Venue Ink booking fee.</p><p>Deposits for larger tattoos or longer sessions vary. The amount, payment method and any applicable fees will be explained before you confirm your booking.</p></details>
+<details><summary>Cancellations &amp; rescheduling</summary><p>Please give at least 48 hours' notice if you need to cancel or rearrange an appointment. You may reschedule up to twice using the same deposit, subject to availability. Further rescheduling may require a new deposit.</p><p>With less than 48 hours' notice, or if you don't attend, some or all of your tattoo deposit may be retained where reasonable to reflect appointment time lost and preparation or design work already completed. This is assessed fairly based on the circumstances, not as an automatic penalty.</p><p>If I need to cancel, you'll be offered an alternative appointment or a refund of the tattoo deposit. Any booking-fee refund will depend on the applicable terms and your statutory rights.</p></details>
+<details><summary>Late arrivals</summary><p>Please arrive on time, and let me know as soon as possible if you're running late. If you're more than 15 minutes late without prior agreement, the appointment may need to be shortened, rearranged or cancelled depending on the time available.</p><p>If you've contacted me in advance, I'll do my best to accommodate you. Any deposit retention will depend on the circumstances and the agreed booking terms.</p></details>
+<details><summary>Custom designs &amp; changes</summary><p>Custom designs may be prepared before your appointment. Please let me know about significant changes to the design, size or placement as early as possible, ideally at least 48 hours in advance.</p><p>Major last-minute changes may require extra design time, a revised quote or a new appointment.</p></details>
+<details><summary>Age restrictions &amp; preparation</summary><p>You must be at least 18 years old to be tattooed. Valid photographic ID may be requested; parental consent does not override the legal minimum age.</p><p>Please arrive well rested, hydrated and having eaten. Avoid alcohol before your appointment, and share any relevant health or skin concerns during your consultation.</p></details>
+<details><summary>Bringing someone along</summary><p>You're welcome to bring a friend, partner or family member for moral support! Guests must follow studio hygiene guidance and stay clear of the tattooing area. Numbers may need to be limited for space and safety.</p></details>
+</div><p class="policy-note">Nothing in these booking policies affects your statutory consumer rights. Any charges or deposit deductions will be explained at booking and applied fairly.</p></div></section>
+<section id="booking"><div class="wrap contact-grid"><div class="contact"><div class="eyebrow">Let's make it happen</div><h2>Have an idea?</h2><p>Venue Ink is the best place to send tattoo enquiries and arrange bookings. Tell me what you're imagining, along with your preferred size, placement and any reference images.</p><div class="actions"><a class="btn primary" href="https://venue.ink/@inkedbyiona" target="_blank" rel="noopener noreferrer">Enquire via Venue Ink</a></div><p class="smallprint">Want to follow along instead? Find me here:</p><div class="social-links"><a id="instagram-link" href="https://www.instagram.com/inkedbyiona" target="_blank" rel="noopener noreferrer">Instagram</a><a id="facebook-link" href="https://www.facebook.com/share/1CZpzVM79g/?mibextid=wwXlfr" target="_blank" rel="noopener noreferrer">Facebook</a><a id="email-link" href="mailto:iona@inkedbyiona.co.uk">Email</a></div></div><div><div class="notice">To help me understand your idea, include:<br><br>— A description or reference image<br>— Where you'd like the tattoo<br>— Approximate size in centimetres<br>— Whether you're thinking custom or flash<br>— Your availability</div><div class="contact-list"><div class="contact-row"><span>Studio</span><span>Berwick-upon-Tweed</span></div><div class="contact-row"><span>Artist</span><span>Inked By Iona</span></div><div class="contact-row"><span>Email</span><span>iona@inkedbyiona.co.uk</span></div><div class="contact-row"><span>Instagram</span><span>@inkedbyiona</span></div></div></div></div></section>
 </main>
-
-<footer><div class="wrap foot"><span>© <span id="year"></span> INKED BY IONA</span><span>Independent tattoo artist · Berwick-upon-Tweed</span></div></footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-<style>
-  .tattoo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-  }
-  .tattoo-gallery figure {
-    margin: 0;
-    background: #20221f;
-    border: 1px solid #45483f;
-  }
-  .tattoo-gallery img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    display: block;
-  }
-  .tattoo-gallery figcaption {
-    padding: 12px;
-    color: #b8b5ac;
-  }
-  .tattoo-gallery figcaption:empty {
-    display: none;
-  }
-</style>
-
+<footer><div class="wrap"><a href="#home" aria-label="Back to homepage"><img class="footer-logo" src="/images/logo%20square.jpg" alt="Inked By Iona square logo" loading="lazy"></a><div class="foot"><span>© <span id="year"></span> INKED BY IONA</span><span>Independent tattoo artist · Berwick-upon-Tweed</span><a href="#policies">Booking Policies</a></div></div></footer>
 <script>
-(async function () {
-  try {
-    const response = await fetch('/content/site.json', {
-      cache: 'no-store'
-    });
-    if (!response.ok) throw new Error('Content unavailable');
-    const data = await response.json();
-
-    function update(selector, value) {
-      const element = document.querySelector(selector);
-      if (element && typeof value === 'string') {
-        element.textContent = value;
-      }
-    }
-
-    update('.hero .eyebrow', data.home?.eyebrow);
-    update('.hero .intro', data.home?.intro);
-    update('#about h2', data.about?.heading);
-    update('#about .about-text h3', data.about?.name);
-
-    const aboutParagraphs =
-      document.querySelectorAll('#about .about-text p');
-    if (aboutParagraphs[0]) {
-      aboutParagraphs[0].textContent = data.about?.paragraph1 || '';
-    }
-    if (aboutParagraphs[1]) {
-      aboutParagraphs[1].textContent = data.about?.paragraph2 || '';
-    }
-    if (aboutParagraphs[2]) aboutParagraphs[2].remove();
-
-    const portfolio = document.querySelector('#work .portfolio-note');
-    if (portfolio && Array.isArray(data.portfolio)) {
-      const gallery = document.createElement('div');
-      gallery.className = 'tattoo-gallery';
-
-      data.portfolio.forEach(item => {
-        const path = typeof item.image === 'string'
-          ? item.image
-          : item.image?.path || item.image?.src || '';
-        if (!path) return;
-
-        const figure = document.createElement('figure');
-        const img = document.createElement('img');
-        img.src = '/' + path.replace(/^\/+/, '');
-        img.alt = item.caption || 'Tattoo by Inked By Iona';
-        img.loading = 'lazy';
-
-        const caption = document.createElement('figcaption');
-        caption.textContent = item.caption || '';
-
-        figure.append(img, caption);
-        gallery.append(figure);
-      });
-
-      if (gallery.children.length) portfolio.replaceWith(gallery);
-    }
-
-    const services = document.querySelector('#services .cards');
-    if (services && Array.isArray(data.services)) {
-      services.replaceChildren();
-      data.services.forEach((service, index) => {
-        const card = document.createElement('article');
-        card.className = 'card';
-
-        const number = document.createElement('div');
-        number.className = 'num';
-        number.textContent = String(index + 1).padStart(2, '0');
-
-        const heading = document.createElement('h3');
-        heading.textContent = service.title || '';
-
-        const description = document.createElement('p');
-        description.textContent = service.description || '';
-
-        card.append(number, heading, description);
-        services.append(card);
-      });
-    }
-
-    if (data.contact) {
-      const rows = document.querySelectorAll('.contact-row');
-      if (rows[0]) rows[0].lastElementChild.textContent =
-        data.contact.location || '';
-      if (rows[2]) rows[2].lastElementChild.textContent =
-        data.contact.email || '';
-      if (rows[3]) rows[3].lastElementChild.textContent =
-        data.contact.instagram || '';
-
-      const instagramButton =
-        document.querySelector('#booking a[href*="instagram.com"]');
-      const emailButton =
-        document.querySelector('#booking a[href^="mailto:"]');
-
-      if (instagramButton && data.contact.instagramUrl) {
-        instagramButton.href = data.contact.instagramUrl;
-        instagramButton.textContent =
-          'Follow ' + (data.contact.instagram || 'Instagram');
-      }
-      if (emailButton && data.contact.email) {
-        emailButton.href = 'mailto:' + data.contact.email;
-      }
-    }
-  } catch (error) {
-    console.error('Could not load website content:', error);
-  }
+document.getElementById('year').textContent=new Date().getFullYear();
+(async function(){
+try{
+ const response=await fetch('/content/site.json',{cache:'no-store'});if(!response.ok)throw new Error('Content unavailable');const data=await response.json();
+ const update=(selector,value)=>{const element=document.querySelector(selector);if(element&&typeof value==='string')element.textContent=value};
+ update('.hero .eyebrow',data.home?.eyebrow);update('.hero .intro',data.home?.intro);
+ // The About Me introduction is kept in four paragraphs; CMS stores it as two editable blocks.
+ update('#about h2',data.about?.heading);
+ const about=document.querySelector('.about-text');if(about&&data.about){
+  const paragraphs=[...(data.about.paragraph1||'').split('\n'),...(data.about.paragraph2||'').split('\n')].filter(Boolean);
+  about.replaceChildren(...paragraphs.map(t=>{const p=document.createElement('p');p.textContent=t;return p}));
+ }
+ const placeholder=document.querySelector('#work .portfolio-note');if(placeholder&&Array.isArray(data.portfolio)){
+  const gallery=document.createElement('div');gallery.className='tattoo-gallery';data.portfolio.forEach(item=>{
+   const path=typeof item.image==='string'?item.image:item.image?.path||item.image?.src||'';if(!path)return;
+   const figure=document.createElement('figure');const img=document.createElement('img');img.src='/'+path.replace(/^\/+/, '').split('/').map(encodeURIComponent).join('/');img.alt=item.caption||'Tattoo by Inked By Iona';img.loading='lazy';
+   if(decodeURIComponent(path).split('/').pop()==='image7[1].jpeg')img.classList.add('rotate-180');
+   const caption=document.createElement('figcaption');caption.textContent=item.caption||'';figure.append(img,caption);gallery.append(figure);
+  });if(gallery.children.length)placeholder.replaceWith(gallery);
+ }
+ const services=document.querySelector('#services .cards');if(services&&Array.isArray(data.services)){
+  services.replaceChildren();data.services.forEach((service,index)=>{const card=document.createElement('article');card.className='card';const number=document.createElement('div');number.className='num';number.textContent=String(index+1).padStart(2,'0');const heading=document.createElement('h3');heading.textContent=service.title||'';const desc=document.createElement('p');desc.textContent=service.description||'';card.append(number,heading,desc);services.append(card)});
+ }
+ if(data.contact){const rows=document.querySelectorAll('.contact-row');if(rows[0])rows[0].lastElementChild.textContent=data.contact.location||'';if(rows[2])rows[2].lastElementChild.textContent=data.contact.email||'';if(rows[3])rows[3].lastElementChild.textContent=data.contact.instagram||'';
+  const ig=document.querySelector('#instagram-link'),fb=document.querySelector('#facebook-link'),email=document.querySelector('#email-link');if(ig&&data.contact.instagramUrl)ig.href=data.contact.instagramUrl;if(fb&&data.contact.facebookUrl)fb.href=data.contact.facebookUrl;if(email&&data.contact.email)email.href='mailto:'+data.contact.email;
+  if(data.contact.bookingUrl)document.querySelectorAll('a[href="https://venue.ink/@inkedbyiona"]').forEach(a=>a.href=data.contact.bookingUrl);
+ }
+}catch(error){console.error('Could not load website content:',error)}
 })();
 </script>
-
-</body>
-</html>
+</body></html>

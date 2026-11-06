@@ -1,54 +1,66 @@
 {
   "home": {
     "eyebrow": "Independent tattoo artist · Berwick-upon-Tweed",
-    "intro": "Thoughtful, individual tattoos — from considered custom pieces to little designs that mean a lot. Specialising in black and grey tattooing."
+    "intro": "From small meaningful pieces to large & bold custom designs, Inked By Iona is all about creating tattoos that feel like you."
   },
-  "about": {
-    "heading": "Meet your artist.",
-    "name": "Hey! I'm Iona.",
-    "paragraph1": "I'm an independent tattoo artist based in Berwick-upon-Tweed. I love creating tattoos that feel personal to the person wearing them, whether that's a custom idea or a favourite flash design.",
-    "paragraph2": "My work focuses primarily on black and grey, with an interest in bold designs, illustrative detail and pieces with a little character."
-  },
+
+"about": {
+  "heading": "Hey, I'm Iona!",
+  "name": "The founder of Inked By Iona",
+  "paragraph1": "I'm the founder of Inked By Iona, a self-taught tattoo artist based in Berwick-upon-Tweed.\nI love bringing people's ideas to life, whether that's something small and meaningful, a bold statement piece or a design that's completely unique to you.",
+  "paragraph2": "While I've mainly focused on black and grey tattooing so far, I'm always happy exploring new styles, techniques and creative ideas as I develop my own artistic specialty.\nI love a bit of variety, so I'm always excited to hear what you've got in mind and work together to create something you'll love!"
+},
+
   "portfolio": [
     {
-      "image": "/images/image0[1].jpeg"
+      "image": "images/image0[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image1[1].jpeg"
+      "image": "images/image1[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image2[1].jpeg"
+      "image": "images/image2[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image3[1].jpeg"
+      "image": "images/image3[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image4[1].jpeg"
+      "image": "images/image4[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image5[1].jpeg"
+      "image": "images/image5[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image6[1].jpeg"
+      "image": "images/image6[1].jpeg",
+      "caption": ""
     },
     {
-      "image": "/images/image7[1].jpeg"
+      "image": "images/image7[1].jpeg",
+      "caption": ""
     }
   ],
   "services": [
     {
-      "title": "Custom tattoos",
-      "description": "One-off designs developed around your ideas, placement and personal style."
+      "title": "Custom Tattoos",
+      "description": "Personalised designs developed together around your ideas, inspiration pictures, placement and individual style."
     },
     {
-      "title": "Flash designs",
-      "description": "Choose from available designs, or keep an eye out for new flash releases."
+      "title": "Flash Designs",
+      "description": "Choose from my available flash designs, offered at set prices and sizes. Keep an eye on my socials for new releases, or browse available designs on Venue Ink!"
     }
   ],
   "contact": {
     "location": "Berwick-upon-Tweed",
     "email": "iona@inkedbyiona.co.uk",
     "instagram": "@inkedbyiona",
-    "instagramUrl": "https://www.instagram.com/inkedbyiona"
+    "instagramUrl": "https://www.instagram.com/inkedbyiona",
+    "facebookUrl": "https://www.facebook.com/share/1CZpzVM79g/?mibextid=wwXlfr",
+    "bookingUrl": "https://venue.ink/@inkedbyiona"
   }
 }
