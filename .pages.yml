@@ -1,0 +1,13 @@
+media:
+  input: images
+  output: /images
+  categories: [image]
+
+content:
+  - name: website
+    label: Website files
+    type: file
+    path: index.html
+    format: code
+    options:
+      language: html
