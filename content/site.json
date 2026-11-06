@@ -1,0 +1,42 @@
+{
+  "home": {
+    "eyebrow": "Independent tattoo artist · Berwick-upon-Tweed",
+    "intro": "Thoughtful, individual tattoos — from considered custom pieces to little designs that mean a lot. Specialising in black and grey tattooing."
+  },
+  "about": {
+    "heading": "Meet your artist.",
+    "name": "Hi, I'm Iona.",
+    "paragraph1": "I'm an independent tattoo artist based in Berwick-upon-Tweed. I love creating tattoos that feel personal to the person wearing them, whether that's a custom idea or a favourite flash design.",
+    "paragraph2": "My work focuses primarily on black and grey, with an interest in bold designs, illustrative detail and pieces with a little character."
+  },
+  "portfolio": [
+    {"image": "images/image0[1].jpeg", "caption": ""},
+    {"image": "images/image1[1].jpeg", "caption": ""},
+    {"image": "images/image2[1].jpeg", "caption": ""},
+    {"image": "images/image3[1].jpeg", "caption": ""},
+    {"image": "images/image4[1].jpeg", "caption": ""},
+    {"image": "images/image5[1].jpeg", "caption": ""},
+    {"image": "images/image6[1].jpeg", "caption": ""},
+    {"image": "images/image7[1].jpeg", "caption": ""}
+  ],
+  "services": [
+    {
+      "title": "Custom tattoos",
+      "description": "One-off designs developed around your ideas, placement and personal style."
+    },
+    {
+      "title": "Flash designs",
+      "description": "Choose from available designs, or keep an eye out for new flash releases."
+    },
+    {
+      "title": "Black & grey",
+      "description": "Monochrome tattoo work, from delicate details to stronger, bolder designs."
+    }
+  ],
+  "contact": {
+    "location": "Berwick-upon-Tweed",
+    "email": "iona@inkedbyiona.co.uk",
+    "instagram": "@inkedbyiona",
+    "instagramUrl": "https://www.instagram.com/inkedbyiona"
+  }
+}
