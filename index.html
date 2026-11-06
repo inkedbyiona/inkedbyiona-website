@@ -161,5 +161,141 @@
 
 <footer><div class="wrap foot"><span>© <span id="year"></span> INKED BY IONA</span><span>Independent tattoo artist · Berwick-upon-Tweed</span></div></footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<style>
+  .tattoo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .tattoo-gallery figure {
+    margin: 0;
+    background: #20221f;
+    border: 1px solid #45483f;
+  }
+  .tattoo-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+  .tattoo-gallery figcaption {
+    padding: 12px;
+    color: #b8b5ac;
+  }
+  .tattoo-gallery figcaption:empty {
+    display: none;
+  }
+</style>
+
+<script>
+(async function () {
+  try {
+    const response = await fetch('/content/site.json', {
+      cache: 'no-store'
+    });
+    if (!response.ok) throw new Error('Content unavailable');
+    const data = await response.json();
+
+    function update(selector, value) {
+      const element = document.querySelector(selector);
+      if (element && typeof value === 'string') {
+        element.textContent = value;
+      }
+    }
+
+    update('.hero .eyebrow', data.home?.eyebrow);
+    update('.hero .intro', data.home?.intro);
+    update('#about h2', data.about?.heading);
+    update('#about .about-text h3', data.about?.name);
+
+    const aboutParagraphs =
+      document.querySelectorAll('#about .about-text p');
+    if (aboutParagraphs[0]) {
+      aboutParagraphs[0].textContent = data.about?.paragraph1 || '';
+    }
+    if (aboutParagraphs[1]) {
+      aboutParagraphs[1].textContent = data.about?.paragraph2 || '';
+    }
+    if (aboutParagraphs[2]) aboutParagraphs[2].remove();
+
+    const portfolio = document.querySelector('#work .portfolio-note');
+    if (portfolio && Array.isArray(data.portfolio)) {
+      const gallery = document.createElement('div');
+      gallery.className = 'tattoo-gallery';
+
+      data.portfolio.forEach(item => {
+        const path = typeof item.image === 'string'
+          ? item.image
+          : item.image?.path || item.image?.src || '';
+        if (!path) return;
+
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+        img.src = '/' + path.replace(/^\/+/, '');
+        img.alt = item.caption || 'Tattoo by Inked By Iona';
+        img.loading = 'lazy';
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = item.caption || '';
+
+        figure.append(img, caption);
+        gallery.append(figure);
+      });
+
+      if (gallery.children.length) portfolio.replaceWith(gallery);
+    }
+
+    const services = document.querySelector('#services .cards');
+    if (services && Array.isArray(data.services)) {
+      services.replaceChildren();
+      data.services.forEach((service, index) => {
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        const number = document.createElement('div');
+        number.className = 'num';
+        number.textContent = String(index + 1).padStart(2, '0');
+
+        const heading = document.createElement('h3');
+        heading.textContent = service.title || '';
+
+        const description = document.createElement('p');
+        description.textContent = service.description || '';
+
+        card.append(number, heading, description);
+        services.append(card);
+      });
+    }
+
+    if (data.contact) {
+      const rows = document.querySelectorAll('.contact-row');
+      if (rows[0]) rows[0].lastElementChild.textContent =
+        data.contact.location || '';
+      if (rows[2]) rows[2].lastElementChild.textContent =
+        data.contact.email || '';
+      if (rows[3]) rows[3].lastElementChild.textContent =
+        data.contact.instagram || '';
+
+      const instagramButton =
+        document.querySelector('#booking a[href*="instagram.com"]');
+      const emailButton =
+        document.querySelector('#booking a[href^="mailto:"]');
+
+      if (instagramButton && data.contact.instagramUrl) {
+        instagramButton.href = data.contact.instagramUrl;
+        instagramButton.textContent =
+          'Follow ' + (data.contact.instagram || 'Instagram');
+      }
+      if (emailButton && data.contact.email) {
+        emailButton.href = 'mailto:' + data.contact.email;
+      }
+    }
+  } catch (error) {
+    console.error('Could not load website content:', error);
+  }
+})();
+</script>
+
 </body>
 </html>
